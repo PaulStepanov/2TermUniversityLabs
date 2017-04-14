@@ -8,12 +8,13 @@ class Task1 {
         if (runArgs.size() < 3) {
             throw new Exception("Not enough args to run");
         }
+
         Collections.reverse(runArgs);
         System.out.println(
                 runArgs.stream()
                         .map(Double::parseDouble)
                         .reduce(0d, (sum, elem) ->
-                                1 / (sum + elem)
+                                    1 / (sum + elem)
                         ));
     }
 }

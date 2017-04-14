@@ -33,7 +33,7 @@ public class Task2 {
         Double prev = null;
         //Эта сложна функция суммы
         while (flag) {
-            double compRes = Math.pow(x, 2 * n) / factorial(2 * n);
+            double compRes = Math.pow(x, 2 * n) / factorial(2 * n);//Считаем элемент ряда
             n++;
             sum = sum + compRes;
 
