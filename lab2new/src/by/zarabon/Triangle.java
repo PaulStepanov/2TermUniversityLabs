@@ -1,3 +1,5 @@
+package by.zarabon;
+
 public class Triangle{
     private Point a, b, c;
     public Triangle(Point _a, Point _b, Point _c) {

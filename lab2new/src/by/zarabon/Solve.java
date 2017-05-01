@@ -1,7 +1,7 @@
+package by.zarabon;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.management.BufferPoolMXBean;
-import java.util.DoubleSummaryStatistics;
 
 public class Solve {
     public void solution() throws Exception{
