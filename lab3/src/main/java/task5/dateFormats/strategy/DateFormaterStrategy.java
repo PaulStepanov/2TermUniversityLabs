@@ -8,5 +8,5 @@ import java.text.SimpleDateFormat;
 import java.util.EnumMap;
 
 public interface DateFormaterStrategy {
-    public  MyDate parseStringToDate(String string,SimpleDateFormat simpleDateFormat) throws ParseException;
+    public  MyDate parseStringToDate(String string) throws ParseException;
 }
