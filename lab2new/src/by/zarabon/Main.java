@@ -1,8 +1,12 @@
 package by.zarabon;
 
 public class Main {
-    public static void main(String args[]) throws Exception{
+    public static void main(String args[]) {
         Solve sl = new Solve();
-        sl.solution();
+        try {
+            sl.solution();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
