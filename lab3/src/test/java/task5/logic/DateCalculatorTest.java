@@ -38,6 +38,7 @@ public class DateCalculatorTest {
         dates.add(dateFormater.parseStringToDate("12.12.2123",Countries.RUSSIA));
         dates.add(dateFormater.parseStringToDate("12.12.2117",Countries.RUSSIA));
 
+
         assertTrue(DateCalculator.countAmountofDatesUntilAverageDate(dates)==5);
     }
 

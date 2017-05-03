@@ -26,6 +26,6 @@ public class DateCalculator {
                 return integer+1;
             }
             return integer;
-        },(integer, integer2) -> integer2);
+        },(integer, integer2) -> integer);
     }
 }

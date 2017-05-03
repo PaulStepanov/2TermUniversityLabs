@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="strings">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lab3/src/main/java/task4/strings.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
