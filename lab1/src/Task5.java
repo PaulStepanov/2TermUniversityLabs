@@ -29,13 +29,13 @@ public class Task5 {
         }
 
         //setup color
-        short intensityStep = 5;
+        short intensityStep = 50;
         short currentIntensity = 0;
         int colorComponent = 0;
         short[][] colors = new short[(int) stepsAmount + 1][3];
         for (int i = 0; i < stepsAmount; i++) {
             colors[i][colorComponent] = currentIntensity += intensityStep;
-            if (currentIntensity == 300) {
+            if (currentIntensity == 250) {
                 colorComponent++;
                 currentIntensity = 0;
             }

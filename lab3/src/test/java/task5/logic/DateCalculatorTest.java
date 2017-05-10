@@ -31,15 +31,19 @@ public class DateCalculatorTest {
         DateFormater dateFormater = new DateFormater();
 
         dates.add(dateFormater.parseStringToDate("12.12.2112",Countries.RUSSIA));
-        dates.add(dateFormater.parseStringToDate("12.12.2115",Countries.RUSSIA));
-        dates.add(dateFormater.parseStringToDate("12.12.2113",Countries.RUSSIA));
-        dates.add(dateFormater.parseStringToDate("12.12.2126",Countries.RUSSIA));
-        dates.add(dateFormater.parseStringToDate("12.12.2109",Countries.RUSSIA));
-        dates.add(dateFormater.parseStringToDate("12.12.2123",Countries.RUSSIA));
-        dates.add(dateFormater.parseStringToDate("12.12.2117",Countries.RUSSIA));
+        dates.add(dateFormater.parseStringToDate("12.09.2113",Countries.RUSSIA));
+        dates.add(dateFormater.parseStringToDate("12.05.2113",Countries.RUSSIA));
+        dates.add(dateFormater.parseStringToDate("12.12.2114",Countries.RUSSIA));
+//        dates.add(dateFormater.parseStringToDate("12.12.2114",Countries.RUSSIA));
+//        dates.add(dateFormater.parseStringToDate("12.12.2126",Countries.RUSSIA));
+//        dates.add(dateFormater.parseStringToDate("12.12.2109",Countries.RUSSIA));
+//        dates.add(dateFormater.parseStringToDate("12.12.2123",Countries.RUSSIA));
+//        dates.add(dateFormater.parseStringToDate("12.12.2117",Countries.RUSSIA));
 
+        System.out.println(DateCalculator.findAverageDate(dateFormater.parseStringToDate("12.12.2112",Countries.RUSSIA),dateFormater.parseStringToDate("12.12.2114",Countries.RUSSIA)).getDate().toString());
+        System.out.println(DateCalculator.countAmountofDatesUntilAverageDate(dates));
 
-        assertTrue(DateCalculator.countAmountofDatesUntilAverageDate(dates)==5);
+        assertTrue(DateCalculator.countAmountofDatesUntilAverageDate(dates)==3);
     }
 
 }

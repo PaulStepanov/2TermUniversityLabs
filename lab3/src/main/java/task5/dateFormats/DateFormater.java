@@ -24,6 +24,7 @@ public class DateFormater {
                 break;
             case JAPAN:
                 strategy = new JapanDateFormaterStrategyImpl();
+                break;
             case RUSSIA:
                 strategy = new RussiaDateFormaterStrategyImpl();
 

@@ -22,10 +22,10 @@ public class DateCalculator {
                 dateList.get(0), dateList.get(dateList.size()-1));//
 
         return dateList.stream().reduce(0, (integer, myDate) -> {
-            if (myDate.getDate().compareTo(averageDate.getDate())!=1){
+            if (myDate.getDate().compareTo(averageDate.getDate())==-1){
                 return integer+1;
             }
             return integer;
-        },(integer, integer2) -> integer);
+        },(integer, integer2) -> integer2);
     }
 }
