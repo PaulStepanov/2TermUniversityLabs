@@ -4,7 +4,6 @@ import converters.ArrayConverter;
 import org.apache.commons.math3.linear.RealMatrix;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -24,7 +23,7 @@ public class MatrixLogic {
                     rowValues.subList(rowIndent.get(), rowValues.size())//slice with indent to get elements upon main diagonal
                             .stream()
                             .reduce(0, (column, element) -> {
-                                retArr.add(new MatrixEntry<Double>(row, column+rowIndent.get(), element));//column+rowIndent to restore column index, because row was already sliced with indent,
+                                retArr.add(new MatrixEntry<Double>(row, column + rowIndent.get(), element));//column+rowIndent to restore column index, because row was already sliced with indent,
                                 return column + 1;
                             }, (integer, integer2) -> integer2);
                     rowIndent.incrementAndGet();
@@ -33,6 +32,28 @@ public class MatrixLogic {
         return retArr;
     }
 
-    
+    public Double findMaxElement(RealMatrix matrix) {
+        ArrayList<Double> maxElements = new ArrayList<>();
+        IntStream.range(0, matrix.getRowDimension()).forEach(rowIndex -> {
+            maxElements.add(ArrayConverter.convertDoublePlainArrayToList(matrix.getRow(rowIndex))
+                    .stream()
+                    .max(Double::compareTo).get());
 
+        });
+
+        return maxElements.stream()
+                .max(Double::compareTo).get();
+    }
+
+    //12. Выведите все элементы массива
+    //* и их индексы, равные максимальному элементу среди элементов, лежащих выше главной диагонали.
+    public ArrayList<MatrixEntry<Double>> maxElmentsAboveMainDiagonal(RealMatrix matrix) {
+        ArrayList<MatrixEntry<Double>> retArr = new ArrayList<>();
+        Double maxValue = findMaxElement(matrix);
+        return elmentsAboveMainDiagonal(matrix).stream()
+                .filter(doubleMatrixEntry ->
+                    doubleMatrixEntry.getValue().equals(maxValue)
+                ).collect(Collectors.toCollection(ArrayList::new));
+
+    }
 }

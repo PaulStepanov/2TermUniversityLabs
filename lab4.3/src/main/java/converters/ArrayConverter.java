@@ -9,4 +9,6 @@ public class ArrayConverter {
         IntStream.range(0,array.length).forEach(value -> retArr.add(array[value]));
         return retArr;
     }
+
+
 }

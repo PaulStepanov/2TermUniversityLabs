@@ -26,12 +26,14 @@
         <module name="lab3" />
         <module name="lab4" />
         <module name="lab4.3" />
+        <module name="lab4.4" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="lab1" target="1.5" />
       <module name="lab3" target="1.5" />
-      <module name="lab4.3" target="1.8" />
+      <module name="lab4.3" target="1.5" />
+      <module name="lab4.4" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
