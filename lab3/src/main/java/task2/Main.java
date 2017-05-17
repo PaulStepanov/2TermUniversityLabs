@@ -14,15 +14,7 @@ public class Main {
         printList(runArgs);
         String subString = "k";
         //12.	По позиции первого вхождения заданной подстроки S в строку
-        runArgs.sort((s1,s2) -> {
-            if (s1.indexOf(subString)>s2.indexOf(subString))
-                return 1;
-            if (s1.indexOf(subString)==s2.indexOf(subString))
-                return 1;
-            if (s1.indexOf(subString)<s2.indexOf(subString))
-                return -1;
-            return 0;
-            });
+        runArgs.sort(comparing(s -> s.indexOf(subString)));
         System.out.println("first sort");
         printList(runArgs);
         //По части строки, расположенной между первым вхождением заданной
