@@ -30,6 +30,7 @@
         <module name="lab5.2" />
         <module name="lab5.3" />
         <module name="lab5.4" />
+        <module name="lab5.4f" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -39,7 +40,7 @@
       <module name="lab4.4" target="1.5" />
       <module name="lab5.2" target="1.5" />
       <module name="lab5.3" target="1.5" />
-      <module name="lab5.4" target="1.8" />
+      <module name="lab5.4f" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
