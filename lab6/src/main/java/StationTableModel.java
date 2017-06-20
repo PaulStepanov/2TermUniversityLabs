@@ -32,7 +32,7 @@ public class StationTableModel extends MyTableModel {
             case 1: return String.class;
             case 2: return Boolean.class;
             case 3: return Integer.class;
-            case 4: return Long.class;
+            case 4: return String.class;
         }
         return null;
     }
@@ -53,7 +53,7 @@ public class StationTableModel extends MyTableModel {
             case 1: return station.getName();
             case 2: return station.isLastStation();
             case 3: return station.getOrdinalNum();
-            case 4: return station.getTimeToNextStationInSeconds();
+            case 4: return TimeConverter.parseSecondsToTime(station.getTimeToNextStationInSeconds()==null?0L:station.getTimeToNextStationInSeconds());
         }
         return null;
     }
@@ -91,7 +91,8 @@ public class StationTableModel extends MyTableModel {
                     station.setOrdinalNum((Integer) value);
                     break;
                 case 4:
-                    station.setTimeToNextStationInSeconds((Long) value);
+
+                    station.setTimeToNextStationInSeconds(TimeConverter.parseTimeToLong((String) value));
                     break;
             }
             save();

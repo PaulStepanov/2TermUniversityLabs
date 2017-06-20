@@ -49,8 +49,6 @@ public class MainForm {
         trainsWindow.setVisible(true);
         trainsWindow.validate();
 
-
-
         JFrame stationWindow =  new JFrame("станции");
         stationWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         stationWindow.setBounds(900, 100, 800, 600);
@@ -89,6 +87,12 @@ public class MainForm {
             Train train = ((StationTableModel) stationTable.getModel()).getTrain();
             int selectedId = stationTable.getSelectedRow();
             String stationName = (String) stationTable.getValueAt(selectedId, 1);
+
+            if (train.getDestinationStation().equals(stationName) || train.getSourceStation().equals(stationName)){
+                JOptionPane.showMessageDialog(null, "you trying to delete station which currently in use");
+                return;
+            }
+
             train.setStations(new ArrayList<>(train.getStations().stream().filter(station -> !station.getName().equals(stationName)).collect(Collectors.toList())));
             refreshTables();
         });

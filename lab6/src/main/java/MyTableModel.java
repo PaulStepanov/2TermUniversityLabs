@@ -1,3 +1,4 @@
+import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 import java.awt.event.ActionEvent;
@@ -7,9 +8,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
-/**
- * Created by kimreik on 20.04.2017.
- */
+
 public abstract class MyTableModel implements TableModel {
     protected ActionListener saveListener;
 

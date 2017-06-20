@@ -109,17 +109,7 @@ public class TrainTableModel extends MyTableModel {
         long between = toTime - fromTime;
 
 
-        long minutes = between / 1000 / 60 % 60;
-        String res = minutes + "";
-        if (minutes < 10) res = "0" + res;
-
-        long hours = between / 1000 / 60 / 60 % 24;
-        res = hours + ":" + res;
-        if (hours < 10) res = "0" + res;
-
-        long days = between / 1000 / 60 / 60 / 24;
-        res = days + ":" + res;
-        return res;
+        return TimeConverter.parseSecondsToTime(between/1000);
     }
 
     /* записываем ячейку в указанную строку и столбец */
